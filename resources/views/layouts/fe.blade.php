@@ -339,40 +339,13 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                     aria-labelledby="pills-home-tab">
-
-                                    <div class="skill-item mt-4 pt-2">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Development</h6>
-                                            <h6>65%</h6>
-                                        </div>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="65"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill-item mt-4 pt-2">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Design</h6>
-                                            <h6>95%</h6>
-                                        </div>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="skill-item mt-4 pt-2">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Branding</h6>
-                                            <h6>80%</h6>
-                                        </div>
-                                        <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                        </div>
-                                    </div>
-
+                                    <ul class="skill-item list-unstyled mt-4">
+                                        <li><i class="mdi mdi-arrow-right me-2"></i>Laravel</li>
+                                        <li><i class="mdi mdi-arrow-right me-2"></i>Codeigniter</li>
+                                        <li><i class="mdi mdi-arrow-right me-2"></i>Vuejs</li>
+                                        <li><i class="mdi mdi-arrow-right me-2"></i>Inertiajs</li>
+                                        <li><i class="mdi mdi-arrow-right me-2"></i>About Us</li>
+                                    </ul>
                                 </div>
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                     aria-labelledby="pills-profile-tab">
