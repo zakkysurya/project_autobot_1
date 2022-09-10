@@ -7,7 +7,7 @@
 
 @include('components.frontend.header')
     <!-- home section -->
-    <section class="home" id="home" style="background-image: url(./images/bg-home.png);">
+    <section class="home" id="home" style="background-image: url({{url('/fe/images/bg-home.png')}});">
         <!-- start container -->
         <div class="container position-relative">
             <div class="row">
@@ -68,7 +68,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="btn-link-icon">
-                                                    <img src="images/home/right-arrow.png" alt=""
+                                                    <img src="{{url('/fe/images/home/right-arrow.png')}}" alt=""
                                                         class="img-fluid ms-3">
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="my-image">
-                                        <img src="images/home/home.png" alt="" class="img-fluid">
+                                        <img src="{{url('/fe/images/home/home.png')}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                                 </a>
                                             </div>
                                             <div class="btn-link-icon">
-                                                <img src="images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                                <img src="{{url('/fe/images/home/right-arrow.png')}}" alt="" class="img-fluid ms-3">
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="my-image">
-                                        <img src="images/home/home-2.png" alt="" class="img-fluid">
+                                        <img src="{{url('/fe/images/home/home-2.png')}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                                                 </a>
                                             </div>
                                             <div class="btn-link-icon">
-                                                <img src="images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                                <img src="{{url('/fe/images/home/right-arrow.png')}}" alt="" class="img-fluid ms-3">
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +215,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="my-image">
-                                        <img src="images/home/home-3.png" alt="" class="img-fluid">
+                                        <img src="{{url('/fe/images/home/home-3.png')}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -275,7 +275,7 @@
                                                 </a>
                                             </div>
                                             <div class="btn-link-icon">
-                                                <img src="images/home/right-arrow.png" alt="" class="img-fluid ms-3">
+                                                <img src="{{url('/fe/images/home/right-arrow.png')}}" alt="" class="img-fluid ms-3">
                                             </div>
                                         </div>
                                     </div>
@@ -283,7 +283,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="my-image">
-                                        <img src="images/home/home-4.png" alt="" class="img-fluid">
+                                        <img src="{{url('/fe/images/home/home-4.png')}}" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +307,7 @@
                     <div class="col-lg-6 position-relative">
                         <div class="image-round"></div>
                         <div class="about-image p-4 pb-0">
-                            <img src="images/about.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/about.png')}}" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -561,7 +561,7 @@
                 <div class="col-lg-3 col-md-6 mt-4 pt-2">
                     <div class="counter-item">
                         <div class="counter-icon text-center">
-                            <img src="images/counter/heart.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/counter/heart.png')}}" alt="" class="img-fluid">
                         </div>
                         <div class="counter-velue text-center mt-3">
                             <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="800">0</h2><span
@@ -576,7 +576,7 @@
                 <div class="col-lg-3 col-md-6 mt-4 pt-2">
                     <div class="counter-item">
                         <div class="counter-icon text-center">
-                            <img src="images/counter/blueprint.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/counter/blueprint.png')}}" alt="" class="img-fluid">
                         </div>
                         <div class="counter-velue text-center mt-3">
                             <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="400">0</h2>
@@ -590,7 +590,7 @@
                 <div class="col-lg-3 col-md-6 mt-4 pt-2">
                     <div class="counter-item">
                         <div class="counter-icon text-center">
-                            <img src="images/counter/star.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/counter/star.png')}}" alt="" class="img-fluid">
                         </div>
                         <div class="counter-velue text-center mt-3">
                             <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="1000">0</h2><span
@@ -605,7 +605,7 @@
                 <div class="col-lg-3 col-md-6 mt-4 pt-2">
                     <div class="counter-item">
                         <div class="counter-icon text-center">
-                            <img src="images/counter/idea.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/counter/idea.png')}}" alt="" class="img-fluid">
                         </div>
                         <div class="counter-velue text-center mt-3">
                             <h2 class="counter_value fw-bold d-inline-block mb-0" data-bs-target="20">0</h2><span
@@ -646,7 +646,7 @@
                         <div class="item">
                             <div class="work-image position-relative">
                                 <a href="">
-                                    <img src="images/work/img-1.png" alt="" class="img-fluid">
+                                    <img src="{{url('/fe/images/work/img-1.png')}}" alt="" class="img-fluid">
                                     <div class="image-title mt-5 ms-5">
                                         <h4 class="mb-0">Web Design</h4>
                                         <p>E-Commerce</p>
@@ -659,7 +659,7 @@
                         <div class="item">
                             <div class="work-image">
                                 <a href="">
-                                    <img src="images/work/img-2.png" alt="" class="img-fluid">
+                                    <img src="{{url('/fe/images/work/img-2.png')}}" alt="" class="img-fluid">
                                     <div class="image-title mt-5 ms-5">
                                         <h4 class="mb-0">NFT Web Design</h4>
                                         <p>NFT Maerketplace</p>
@@ -672,7 +672,7 @@
                         <div class="item">
                             <div class="work-image">
                                 <a href="">
-                                    <img src="images/work/img-3.png" alt="" class="img-fluid">
+                                    <img src="{{url('/fe/images/work/img-3.png')}}" alt="" class="img-fluid">
                                     <div class="image-title mt-5 ms-5 text-white">
                                         <h4 class="mb-0">App Design</h4>
                                         <p class="text-white-50">Mobile App </p>
@@ -685,7 +685,7 @@
                         <div class="item">
                             <div class="work-image">
                                 <a href="">
-                                    <img src="images/work/img-4.png" alt="" class="img-fluid">
+                                    <img src="{{url('/fe/images/work/img-4.png')}}" alt="" class="img-fluid">
                                     <div class="image-title mt-5 ms-5 text-white">
                                         <h4 class="mb-0">Web Design</h4>
                                         <p class="text-white-50">E-Commerce</p>
@@ -710,7 +710,7 @@
         <div class="container">
 
             <div class="shape-1">
-                <img src="images/testi/shape.png" alt="" class="img-fluid">
+                <img src="{{url('/fe/images/testi/shape.png')}}" alt="" class="img-fluid">
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -1103,11 +1103,11 @@
         <!-- end container -->
 
         <div class="shape-2">
-            <img src="images/testi/shape-2.png" alt="" class="img-fluid">
+            <img src="{{url('/fe/images/testi/shape-2.png')}}" alt="" class="img-fluid">
         </div>
 
         <div class="shape-3 ">
-            <img src="images/testi/shape-3.png" alt="" class="img-fluid">
+            <img src="{{url('/fe/images/testi/shape-3.png')}}" alt="" class="img-fluid">
         </div>
 
     </section>
@@ -1116,7 +1116,7 @@
     <!-- start testimonial -->
     <section class="section testimonial" id="testi">
         <div class="shape-1">
-            <img src="images/testi/shape.png" alt="" class="img-fluid">
+            <img src="{{url('/fe/images/testi/shape.png')}}" alt="" class="img-fluid">
         </div>
         <!-- start container -->
         <div class="container">
@@ -1138,7 +1138,7 @@
                     <!-- start slider -->
                     <div class="swiper-slide border-radius position-relative ">
                         <div class="user-image">
-                            <img src="images/team/img1.png" alt="" class="avatar-md rounded-circle">
+                            <img src="{{url('/fe/images/team/img1.png')}}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="text-center mt-4">
                             <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
@@ -1158,7 +1158,7 @@
                     <!-- start slider -->
                     <div class="swiper-slide border-radius position-relative ">
                         <div class="user-image">
-                            <img src="images/team/img2.png" alt="" class="avatar-md rounded-circle">
+                            <img src="{{url('/fe/images/team/img2.png')}}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="text-center mt-4">
                             <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
@@ -1178,7 +1178,7 @@
                     <!-- start slider -->
                     <div class="swiper-slide border-radius position-relative ">
                         <div class="user-image">
-                            <img src="images/team/img3.png" alt="" class="avatar-md rounded-circle">
+                            <img src="{{url('/fe/images/team/img3.png')}}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="text-center mt-4">
                             <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
@@ -1198,7 +1198,7 @@
                     <!-- start slider -->
                     <div class="swiper-slide border-radius position-relative ">
                         <div class="user-image">
-                            <img src="images/team/img4.png" alt="" class="avatar-md rounded-circle">
+                            <img src="{{url('/fe/images/team/img4.png')}}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="text-center mt-4">
                             <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
@@ -1218,7 +1218,7 @@
                     <!-- start slider -->
                     <div class="swiper-slide border-radius position-relative ">
                         <div class="user-image">
-                            <img src="images/team/img5.png" alt="" class="avatar-md rounded-circle">
+                            <img src="{{url('/fe/images/team/img5.png')}}" alt="" class="avatar-md rounded-circle">
                         </div>
                         <div class="text-center mt-4">
                             <p class="f-16 text-muted fs-15">" We use a customized application specifically designed a
@@ -1242,11 +1242,11 @@
         </div>
 
         <div class="shape-2">
-            <img src="images/testi/shape-2.png" alt="" class="img-fluid">
+            <img src="{{url('/fe/images/testi/shape-2.png')}}" alt="" class="img-fluid">
         </div>
 
         <div class="shape-3">
-            <img src="images/testi/shape-3.png" alt="" class="img-fluid">
+            <img src="{{url('/fe/images/testi/shape-3.png')}}" alt="" class="img-fluid">
         </div>
         <!-- end container -->
     </section>
@@ -1273,7 +1273,7 @@
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="blog-item p-4 box-shadow">
                         <div class="blog-image">
-                            <img src="images/blog/img-1.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/blog/img-1.png')}}" alt="" class="img-fluid">
                             <div class="blog-image-icon bg-blue">
                                 <i class="mdi mdi-lan fs-24"></i>
                             </div>
@@ -1292,7 +1292,7 @@
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="blog-item p-4 box-shadow">
                         <div class="blog-image">
-                            <img src="images/blog/img-2.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/blog/img-2.png')}}" alt="" class="img-fluid">
                             <div class="blog-image-icon bg-secondary">
                                 <i class="mdi mdi-responsive fs-24"></i>
                             </div>
@@ -1311,7 +1311,7 @@
                 <div class="col-lg-4 mt-4 pt-2">
                     <div class="blog-item p-4 box-shadow">
                         <div class="blog-image">
-                            <img src="images/blog/img-3.png" alt="" class="img-fluid">
+                            <img src="{{url('/fe/images/blog/img-3.png')}}" alt="" class="img-fluid">
                             <div class="blog-image-icon bg-primary">
                                 <i class="mdi mdi-vector-combine fs-24"></i>
                             </div>
@@ -1338,7 +1338,7 @@
         <div class="container">
 
             <div class="shape-1">
-                <img src="images/testi/shape.png" alt="" class="img-fluid">
+                <img src="{{url('/fe/images/testi/shape.png')}}" alt="" class="img-fluid">
             </div>
 
             <div class="contact-item">
@@ -1453,11 +1453,11 @@
             </div>
 
             <div class="shape-2">
-                <img src="images/testi/shape-2.png" alt="" class="img-fluid">
+                <img src="{{url('/fe/images/testi/shape-2.png')}}" alt="" class="img-fluid">
             </div>
 
             <div class="shape-3 ">
-                <img src="images/testi/shape-3.png" alt="" class="img-fluid">
+                <img src="{{url('/fe/images/testi/shape-3.png')}}" alt="" class="img-fluid">
             </div>
         </div>
         <!-- end container -->
