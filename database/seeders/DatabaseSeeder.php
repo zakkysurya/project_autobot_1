@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             UserSeeder::class,
-            BiodataSeeder::class,
+            ProfileSeeder::class,
             SkillSeeder::class,
             ExperienceSeeder::class,
             EducationalSeeder::class,

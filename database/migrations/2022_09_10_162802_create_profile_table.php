@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('biodata', function (Blueprint $table) {
-            $table->id('id_biodata');
+        Schema::create('profile', function (Blueprint $table) {
+            $table->id('id_profile');
             $table->string('full_name');
             $table->string('nick_name');
             $table->string('position');
