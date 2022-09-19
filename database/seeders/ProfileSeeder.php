@@ -17,6 +17,7 @@ class ProfileSeeder extends Seeder
     public function run()
     {   
         DB::table('profile')->insert([
+           'photo' => './fe/images/home/home.png',
            'full_name' => 'admin',
            'nick_name' => 'lagi',
            'position' => 'be developer',
