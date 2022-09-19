@@ -21,7 +21,11 @@
     <!-- Theme Styles -->
     <link href="{{ asset('source/assets/css/main.min.css') }}" rel="stylesheet">
     <link href="{{ asset('source/assets/css/custom.css') }}" rel="stylesheet">
+    <!-- Input File Drag n Drop -->
+    {{-- <link href="{{ asset('source/assets/plugins/highlight/styles/github-gist.css') }}" rel="stylesheet">
+    <link href="{{ asset('source/assets/plugins/dropzone/min/dropzone.min.css') }}" rel="stylesheet"> --}}
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('source/assets/images/neptune.png') }}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('source/assets/images/neptune.png') }}" />
+    @yield('css')
 </head>

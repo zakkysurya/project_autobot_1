@@ -14,7 +14,11 @@
             </div>
             @include('components.admin.navbar')
             <div class="app-content">
-               @yield('content')
+                <div class="content-wrapper">
+                    <div class="container">
+                    @yield('content')
+                    </div>
+                </div>
             </div>
         </div>
     </div>

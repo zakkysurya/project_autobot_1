@@ -39,16 +39,21 @@
             <div class="logo">
                 <a href="index.html">Neptune</a>
             </div>
+            @if(session('error'))
+            <div class="alert alert-danger">
+                <b>Opps!</b> {{session('error')}}
+            </div>
+            @endif
+            {{ Auth::user() }}
             <p class="auth-description">Please sign-in to your account and continue to the dashboard.<br>Don't have an account? <a href="sign-up.html">Sign Up</a></p>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('authenticate') }}">
             @csrf
             <div class="auth-credentials m-b-xxl">
                 <label for="signInEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@neptune.com" name="email" :value="old('email')" required autofocus>
+                <input type="email" name="email" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@neptune.com"  :value="old('email')" required autofocus>
 
                 <label for="signInPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signInPassword" aria-describedby="signInPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" name="password"
-                                required autocomplete="current-password">
+                <input type="password" name="password" class="form-control" id="signInPassword" aria-describedby="signInPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required autocomplete="current-password">
             </div>
 
             <div class="auth-submit">
