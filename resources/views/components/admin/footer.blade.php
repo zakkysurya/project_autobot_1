@@ -8,5 +8,6 @@
   <script src="{{ asset('source/assets/js/main.min.js') }}"></script>
   <script src="{{ asset('source/assets/js/custom.js') }}"></script>
   <script src="{{ asset('source/assets/js/pages/dashboard.js') }}"></script>
+  @yield('js')
   <!-- Javascripts : File upload drag n drop -->
   {{-- <script src="{{ asset('source/assets/plugins/dropzone/min/dropzone.min.js') }}"></script> --}}
