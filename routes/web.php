@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,7 @@ Route::get('/', function () {
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences');
     Route::get('/education', [EducationController::class, 'index'])->name('education');
+    Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
 // });
 
 
