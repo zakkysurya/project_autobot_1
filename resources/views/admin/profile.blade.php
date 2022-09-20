@@ -96,7 +96,7 @@
                     </div>
                     <div class="example-content">
                         <div class="d-grid mt-5">
-                        <button class="btn btn-lg btn-primary" type="button">Update</button>
+                            <button class="btn btn-lg btn-primary" type="button">Update</button>
                         </div>
                     </div>
                 {{-- </div> --}}
