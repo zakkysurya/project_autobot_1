@@ -18,19 +18,25 @@
                 <a href="index.html" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
             </li>
             <li>
-                <a href="/profile"><i class="material-icons-two-tone">inbox</i>Profile</a>
+                <a href="/profile"><i class="material-icons-two-tone">cloud_queue</i>Profile</a>
             </li>
             <li>
                 <a href="/services"><i class="material-icons-two-tone">cloud_queue</i>Services</a>
             </li>
             <li>
-                <a href="/portfolio"><i class="material-icons-two-tone">calendar_today</i>Portfolio</a>
+                <a href="/portfolio"><i class="material-icons-two-tone">cloud_queue</i>Portfolio</a>
             </li>
             <li>
-                <a href="/experiences"><i class="material-icons-two-tone">calendar_today</i>Experiences</a>
+                <a href="/experiences"><i class="material-icons-two-tone">cloud_queue</i>Experiences</a>
             </li>
             <li>
-                <a href="/testimonials"><i class="material-icons-two-tone">calendar_today</i>Testimonials</a>
+                <a href="/education"><i class="material-icons-two-tone">cloud_queue</i>Education</a>
+            </li>
+            <li>
+                <a href="/testimonials"><i class="material-icons-two-tone">cloud_queue</i>Testimonials</a>
+            </li>
+            <li>
+                <a href="/messages"><i class="material-icons-two-tone">cloud_queue</i>Messages</a>
             </li>
         </ul>
     </div>
