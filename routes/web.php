@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -41,6 +42,7 @@ Route::get('/', function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/services', [ServiceController::class, 'index'])->name('services');
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+    Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences');
 // });
 
 
