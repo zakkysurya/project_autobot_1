@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -47,6 +48,7 @@ Route::get('/', function () {
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences');
     Route::get('/education', [EducationController::class, 'index'])->name('education');
     Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages');
 // });
 
 
