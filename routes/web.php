@@ -39,11 +39,20 @@ Route::get('/', function () {
 
     Route::group(['prefix' => 'dashboard'], function() {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
-        // Route::get('/detail/info', [DashboardController::class, 'index']);
     });
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-    Route::get('/services', [ServiceController::class, 'index'])->name('services');
+    Route::group(['prefix' => 'profile'], function() {
+        Route::get('/', [ProfileController::class, 'index']);
+        Route::put('/update', [ProfileController::class, 'update'])->name('update');
+    });
+    Route::group(['prefix' => 'services'], function() {
+        Route::get('/', function(){
+            return view('admin.services');
+        });
+        Route::get('/show', [ServiceController::class, 'show']);
+        Route::post('/store', [ServiceController::class, 'store'])->name('store');
+        Route::delete('/delete', [ServiceController::class, 'delete'])->name('delete');
+    });
+
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
     Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences');
     Route::get('/education', [EducationController::class, 'index'])->name('education');

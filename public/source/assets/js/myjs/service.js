@@ -12,7 +12,9 @@ $("#form-add_data").on("submit", function (e) {
 $(document).on("click", "#btn-delete_services", function (e) {
     e.preventDefault();
     let id_service = $(this).data("id_service");
-    confirm_delete(id_service);
+    let _token = $("[name='_token']").val();
+
+    confirm_delete(id_service, _token);
 });
 
 function get_data() {
@@ -40,8 +42,8 @@ function get_data() {
     });
 }
 
-function delete_data(id_service) {
-    let data = { id_service };
+function delete_data(id_service, _token) {
+    let data = { id_service, _token };
     $.ajax({
         type: "DELETE",
         url: "services/delete",
@@ -112,7 +114,7 @@ function success_message(msg) {
     });
 }
 
-function confirm_delete(id_service) {
+function confirm_delete(id_service, _token) {
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -123,7 +125,7 @@ function confirm_delete(id_service) {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
-            delete_data(id_service);
+            delete_data(id_service, _token);
             Swal.fire("Deleted!", "Your data has been deleted.", "success");
             get_data();
         }

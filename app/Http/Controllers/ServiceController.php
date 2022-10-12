@@ -30,8 +30,8 @@ class ServiceController extends Controller
         }
     }
 
-    public function delete($id_service=null){
-        $data = Service::where('id_service', $id_service);
+    public function delete(Request $request){
+        $data = Service::where('id_service', $request->id_service);
         $data->delete();
         return response()->json($this->res(true, "Data berhasil dihapus"));
     }

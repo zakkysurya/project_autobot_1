@@ -25,7 +25,7 @@
             <div class="card-body">
                 <div class="example-container">
                     <div class="example-content bg-light" id="list_services">
-                        
+                        @csrf
                     </div>
                 </div>
             </div>
