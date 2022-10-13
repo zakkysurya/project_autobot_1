@@ -37,7 +37,7 @@ function get_data() {
             console.log("complete");
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            error_message(`Error : ${textStatus}`);
+            error_message(`${errorThrown}`);
         },
     });
 }
@@ -101,7 +101,7 @@ function error_message(msg) {
         title: "Error!",
         text: msg,
         icon: "error",
-        confirmButtonText: "Cool",
+        confirmButtonText: "OK",
     });
 }
 

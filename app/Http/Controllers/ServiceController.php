@@ -19,7 +19,7 @@ class ServiceController extends Controller
     }
 
     public function store(Request $request){
-        // dd($request->all());
+        
         $dataService = [ 'icon' => 'mdi-comment-plus-outline', 'service_name' => $request->service, 'description' => $request->description ];
 
         $insert = Service::create($dataService);
