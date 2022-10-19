@@ -4,6 +4,13 @@
 {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> --}}
 @endsection
 @section('content')
+@php
+$years = array();
+$current_year = date("Y");
+for($i="2000"; $i <= $current_year; $i++){
+   $years[$i] = $i; 
+}
+@endphp
 <div class="row">
     <div class="col">
         <div class="page-description">
@@ -19,8 +26,10 @@
             </div>
             <div class="card-body">
                 <div class="example-container">
+
                     <div class="row example-content">
-                        <form action="" method="post">
+                        <form id="form-add_data" data-url="{{ route('experiences.store'); }}" action="">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="inputCompanyName" class="form-label">Company Name</label>
@@ -33,16 +42,16 @@
                                 <div class="col-md-2">
                                     <label for="inputStartYear" class="form-label">Start</label>
                                     <select id="inputStartYear" class="form-select" name="inputStartYear">
-                                        <option selected>--Pilih--</option>
-                                    @foreach ($years as $row)
-                                    <option value="{{ $row }}">{{ $row }}</option>
-                                    @endforeach
+                                        <option selected value="0">--Pilih--</option>
+                                        @foreach ($years as $row)
+                                        <option value="{{ $row }}">{{ $row }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="inputEndYear" class="form-label">End</label>
                                     <select id="inputEndYear" class="form-select" name="inputEndYear">
-                                        <option selected>--Pilih--</option>
+                                        <option selected value="0">--Pilih--</option>
                                     @foreach ($years as $row)
                                     <option value="{{ $row }}">{{ $row }}</option>
                                     @endforeach
@@ -52,7 +61,7 @@
 
                             <div class="row mt-2">
                                 <div class="col">
-                                    <button class="btn btn-lg btn-primary" type="button">Save</button>
+                                    <button class="btn btn-lg btn-primary" type="submit">Save</button>
                                 </div>
                             </div>
                             
@@ -61,17 +70,8 @@
 
                     <div class="row example-content">
                         <div class="todo-list">
-                            <ul class="list-unstyled">
-                                <li class="todo-item">
-                                    <div class="todo-item-content">
-                                        <span class="todo-item-title">Conpany Name<span class="badge badge-style-light rounded-pill badge-info">2020 sd 2018</span></span>
-                                        <span class="todo-item-subtitle">Position</span>
-                                    </div>
-                                    <div class="todo-item-actions">
-                                        <a href="#" class="todo-item-delete"><i class="material-icons-outlined no-m">close</i></a>
-                                        {{-- <a href="#" class="todo-item-done"><i class="material-icons-outlined no-m">done</i></a> --}}
-                                    </div>
-                                </li>
+                            <ul class="list-unstyled" id="list_experiences">
+                                {{-- SHOW DATA HERE --}}
                             </ul>
                         </div>
                     </div>
@@ -83,15 +83,5 @@
 </div>
 @endsection
 @section('js')
-
-{{-- <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/weekSelect/weekSelect.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/minMaxTimePlugin.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
-<script src="https://flatpickr.js.org/flatpickr.js"></script> --}}
-
-{{-- <script src="{{ asset('source/assets/plugins/flatpickr/flatpickr.js') }}"></script> --}}
-{{-- <script src="{{ asset('source/assets/js/pages/datepickers.js') }}"></script> --}}
+<script src="{{ asset('source/assets/js/myjs/experience.js') }}"></script>
 @endsection
