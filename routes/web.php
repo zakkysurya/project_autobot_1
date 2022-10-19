@@ -69,7 +69,16 @@ Route::get('/', function () {
         Route::post('/store', [ExperienceController::class, 'store'])->name('experiences.store');
         Route::get('/delete/{id_experience}', [ExperienceController::class, 'delete'])->name('experiences.delete');
     });
-    Route::get('/education', [EducationController::class, 'index'])->name('education');
+
+    Route::group(['prefix' => 'education'], function() {
+        Route::get('/', function(){
+            return view('admin.education');
+        });
+        Route::get('/show', [EducationController::class, 'show']);
+        Route::post('/store', [EducationController::class, 'store'])->name('education.store');
+        Route::get('/delete/{id_experience}', [EducationController::class, 'delete'])->name('education.delete');
+    });
+
     Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
     Route::get('/messages', [MessageController::class, 'index'])->name('messages');
 // });
