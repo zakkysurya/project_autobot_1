@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
+// Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 // Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
@@ -41,7 +41,9 @@ Route::get('/', function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     });
     Route::group(['prefix' => 'profile'], function() {
-        Route::get('/', [ProfileController::class, 'index']);
+        Route::get('/', function(){
+            return view('admin.profile');
+        });
         Route::put('/update', [ProfileController::class, 'update'])->name('update');
     });
     Route::group(['prefix' => 'services'], function() {
@@ -79,7 +81,17 @@ Route::get('/', function () {
         Route::get('/delete/{id_experience}', [EducationController::class, 'delete'])->name('education.delete');
     });
 
-    Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
+    Route::group(['prefix' => 'testimonial'], function() {
+        Route::get('/', function(){
+            return view('admin.testimonial');
+        });
+        Route::get('/show', [TestimonialController::class, 'show']);
+        Route::post('/store', [TestimonialController::class, 'store'])->name('testimonial.store');
+        Route::put('/update', [TestimonialController::class, 'store'])->name('testimonial.update');
+        Route::get('/detail/{id_testimonial}', [TestimonialController::class, 'detail'])->name('testimonial.detail');
+        Route::get('/delete/{id_testimonial}', [TestimonialController::class, 'delete'])->name('testimonial.delete');
+    });
+    
     Route::get('/messages', [MessageController::class, 'index'])->name('messages');
 // });
 

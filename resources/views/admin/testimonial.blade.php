@@ -20,9 +20,11 @@
             <div class="card-body">
                 <div class="example-container">
                     <div class="row example-content">
-                        <form class="row g-3">
+                        <form  id="form-add_data" data-url="{{ route('testimonial.store'); }}" action="" method="post">
+                            @csrf
+                        <div class="row g-3">
                             <div class="col-md-2">
-                                <div class="image-preview" id="image-preview">{{-- {{ url($data['data']->image) }} --}}
+                                <div class="image-preview" id="image-preview">
                                     <img src="./fe/images/team/user.png" alt="Image Preview"
                                         class="image img-thumbnail" width="200px" height="200px">
                                 </div>
@@ -41,43 +43,63 @@
                             </div>
                             <div class="col-12">
                                 <label for="inputText" class="form-label">Testimonial</label>
-                                <input type="text" class="form-control" id="inputText" placeholder="Testimonial here...">
+                                <input type="text" name="inputText" class="form-control" id="inputText" placeholder="Testimonial here...">
                             </div>
                             <div class="col-12">
-                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
+                        </div>
                         </form>
                     </div>
 
                     <div class="row example-content">
                         <div class="todo-list">
-                            <ul class="list-unstyled">
-                                <li class="todo-item">
-                                    <div class="todo-item-content">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="./fe/images/team/img1.png" alt="Image Preview" class="img-thumbnail" width="200px" height="200px">
-                                            </div>
-                                            <div class="col-6">
-                                                <span class="todo-item-title">2020 sd 2018 <span class="badge badge-style-light rounded-pill badge-info">SD</span></span>
-                                                <span class="todo-item-subtitle">School Name</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="todo-item-actions">
-                                        <a href="#" class="todo-item-delete"><i class="material-icons-outlined no-m">close</i></a>
-                                        {{-- <a href="#" class="todo-item-done"><i class="material-icons-outlined no-m">done</i></a> --}}
-                                    </div>
-                                </li>
+                            <ul class="list-unstyled" id="list_testimonials">
+                                 {{-- SHOW DATA HERE --}}
                             </ul>
                         </div>
                     </div>
                     
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-form" tabindex="-1" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="form-add_data" class="row g-3" data-url="{{ route('store'); }}">
+            @csrf
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-form">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="mb-3">
+                <label for="inputService" class="form-label">Service</label>
+                <input type="text" name="service" class="form-control" id="inputService" >
+              </div>
+              <div class="mb-3">
+                <label for="inputDescription" class="form-label">Description</label>
+                <textarea name="description" class="form-control" id="inputDescription" rows="3"></textarea>
+              </div>
+             
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+
+    </form>
+    </div>
+  </div>
+
 <script>
     const inpImg = document.getElementById('photo')
     const imgPrev = document.getElementById('image-preview')
@@ -110,4 +132,8 @@
     })
 
 </script>
+@endsection
+
+@section('js')
+<script src="{{ asset('source/assets/js/myjs/testimonial.js') }}"></script>
 @endsection
