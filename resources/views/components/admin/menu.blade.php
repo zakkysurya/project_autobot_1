@@ -33,7 +33,7 @@
                 <a href="/education"><i class="material-icons-two-tone">cloud_queue</i>Education</a>
             </li>
             <li>
-                <a href="/testimonials"><i class="material-icons-two-tone">cloud_queue</i>Testimonials</a>
+                <a href="/testimonial"><i class="material-icons-two-tone">cloud_queue</i>Testimonials</a>
             </li>
             <li>
                 <a href="/messages"><i class="material-icons-two-tone">cloud_queue</i>Messages</a>
