@@ -9,5 +9,5 @@ class Service extends Model
 {
     use HasFactory;
     protected $table = 'services';
-    protected $guarded = ['created_at'];
+    protected $guarded = ['created_at', 'updated_at'];
 }
