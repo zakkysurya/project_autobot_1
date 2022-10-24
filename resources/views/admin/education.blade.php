@@ -28,7 +28,7 @@ for($i="2000"; $i <= $current_year; $i++){
             <div class="card-body">
                 <div class="example-container">
                     <div class="row example-content">
-                        <form  id="form-add_data" data-url="{{ route('education.store'); }}" action="" method="post">
+                        <form id="form-add_data" data-url="{{ route('education.store'); }}" action="" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-4">
