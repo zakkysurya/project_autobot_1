@@ -30,15 +30,15 @@
                 <li class="nav-item dropdown dropdown-hover">
                     <a href="#work" class="nav-link ">Work</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#pricing" class="nav-link">Pricing</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="#testi" class="nav-link">Testimonial</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#blog" class="nav-link">Blog</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
