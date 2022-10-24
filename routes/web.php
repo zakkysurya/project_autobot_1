@@ -9,6 +9,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 // Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 // Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/', function () {
-    return view('web.index');
-});
+Route::get('/', [FrontendController::class, 'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('admin.index');
@@ -43,7 +42,7 @@ Route::get('/', function () {
     Route::group(['prefix' => 'profile'], function() {
         Route::get('/', function(){
             return view('admin.profile');
-        });
+        })->name('profile');
         Route::put('/update', [ProfileController::class, 'update'])->name('update');
     });
     Route::group(['prefix' => 'services'], function() {
