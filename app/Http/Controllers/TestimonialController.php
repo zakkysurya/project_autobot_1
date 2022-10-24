@@ -98,7 +98,20 @@ class TestimonialController extends Controller
         $data->delete();
         return response()->json($this->res(true, "Data berhasil dihapus"));
     }
-       
+    
+    public function detail($id_testimonial){
+        try {
+            $data = Testimonial::where('id_testimonial', $id_testimonial)->get();
+            
+            if($data){
+                return response()->json($this->res(true, "", $data));
+            }
+        } catch (QueryException $e) {
+            return response()->json($this->res(false, $e->errorInfo));
+        }
+
+    }
+
     public function upload($path, $file, $name){
         return Storage::putFileAs($path, $file, $name);
     }

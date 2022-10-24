@@ -70,7 +70,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal-form" tabindex="-1" aria-labelledby="modal-form" aria-hidden="true">
     <div class="modal-dialog">
-        <form id="form-add_data" class="row g-3" data-url="{{ route('store'); }}">
+        <form id="form-add_data" class="row g-3" data-url="{{ route('testimonial.update'); }}">
             @csrf
       <div class="modal-content">
         <div class="modal-header">
@@ -78,16 +78,34 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          
-            <div class="mb-3">
-                <label for="inputService" class="form-label">Service</label>
-                <input type="text" name="service" class="form-control" id="inputService" >
-              </div>
-              <div class="mb-3">
-                <label for="inputDescription" class="form-label">Description</label>
-                <textarea name="description" class="form-control" id="inputDescription" rows="3"></textarea>
-              </div>
-             
+            <form  id="form-update_data" data-url="{{ route('testimonial.store'); }}" action="" method="post">
+                @csrf
+            <div class="row g-3">
+                <div class="col-12 text center">
+                    <div class="image-preview" id="modal-image-preview">
+                        <img src="./fe/images/team/user.png" alt="Image Preview"
+                            class="img-thumbnail modal-show-image" width="200px" height="200px">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="photo" class="form-label">Photo<label class="text-danger">*</label></label>
+                    <input type="file" accept=".jpg,.jpeg,.png" name="photo" class="form-control" id="modal-photo">
+                    <input type="hidden" accept=".jpg,.jpeg,.png" name="photo_old" class="form-control" id="modal-photo_old">
+                </div>
+                <div class="col-12">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" name="inputName" class="form-control" id="modal-inputName" placeholder="Name">
+                </div>
+                <div class="col-12">
+                    <label for="inputPosition" class="form-label">Position</label>
+                    <input type="text" name="inputPosition" class="form-control" id="modal-inputPosition" placeholder="Position">
+                </div>
+                <div class="col-12">
+                    <label for="inputText" class="form-label">Testimonial</label>
+                    <input type="text" name="inputText" class="form-control" id="modal-inputText" placeholder="Testimonial here...">
+                </div>
+            </div>
+            </form>
 
         </div>
         <div class="modal-footer">
