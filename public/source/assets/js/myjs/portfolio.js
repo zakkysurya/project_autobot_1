@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 $("#form-add_data").on("submit", function (e) {
     e.preventDefault();
-    // console.log($(this)[0]);
     let formData = new FormData($(this)[0]);
     let url = $(this).data("url");
     save_data(url, formData);
@@ -14,7 +13,6 @@ $("#form-add_data").on("submit", function (e) {
 $(document).on("click", "#btn-delete_portolio", function (e) {
     e.preventDefault();
     let id_portfolio = $(this).data("id_portfolio");
-    // console.log(_token);
     confirm_delete(id_portfolio);
 });
 
@@ -110,6 +108,17 @@ function error_message(msg) {
         text: msg,
         icon: "error",
         confirmButtonText: "OK",
+    }).then((res) => {
+        if (res.isConfirmed) {
+            get_data();
+        } else if (res.isDismissed) {
+            Swal.fire({
+                icon: "info",
+                title: "Waiting for connection, and then refresh browser",
+                showConfirmButton: false,
+                timer: 2000,
+            });
+        }
     });
 }
 

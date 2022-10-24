@@ -110,6 +110,17 @@ function error_message(msg) {
         text: msg,
         icon: "error",
         confirmButtonText: "OK",
+    }).then((res) => {
+        if (res.isConfirmed) {
+            get_data();
+        } else if (res.isDismissed) {
+            Swal.fire({
+                icon: "info",
+                title: "Waiting for connection, and then refresh browser",
+                showConfirmButton: false,
+                timer: 2000,
+            });
+        }
     });
 }
 

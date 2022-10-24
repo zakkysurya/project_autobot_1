@@ -18,7 +18,39 @@ $(document).on("click", "#btn-delete_testimonial", function (e) {
 $(document).on("click", "#btn-edit_testimonial", function (e) {
     e.preventDefault();
     let id_testimonial = $(this).data("id_testimonial");
+    detail_data(id_testimonial);
 });
+
+// Event for modal dialog
+$(document).on("change", "#modal-photo", function (e) {
+    e.preventDefault();
+    const imgPrev = document.getElementById("modal-image-preview");
+    const imgShow = imgPrev.querySelector(".modal-show-image");
+
+    const file = this.files[0];
+    const type = file.type.split("/")[0];
+
+    if (type != "image") {
+        imgShow.style.display = "null";
+        imgShow.setAttribute("src", "");
+        imgShow.setAttribute("height", "");
+        imgShow.innerHTML = '<p style="color:red"><i>Cannot read file</i></p>';
+    } else {
+        if (file) {
+            const reader = new FileReader();
+            imgShow.style.display = "block";
+            reader.addEventListener("load", function () {
+                imgShow.setAttribute("height", "300px");
+                imgShow.setAttribute("src", this.result);
+            });
+            reader.readAsDataURL(file);
+        } else {
+            imgShow.style.display = "null";
+            imgShow.setAttribute("src", "");
+        }
+    }
+});
+// end event modal dialog
 
 function get_data() {
     $.ajax({
@@ -45,7 +77,18 @@ function get_data() {
             $("#inputText").val("");
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            error_message(`Error : ${errorThrown}`);
+            error_message(`Error : ${errorThrown}`).then((res) => {
+                if (res.isConfirmed) {
+                    get_data();
+                } else if (res.isDismissed) {
+                    Swal.fire({
+                        icon: "info",
+                        title: "Waiting for connection, and then refresh browser",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
+                }
+            });
         },
     });
 }
@@ -69,26 +112,24 @@ function delete_data(id_testimonial) {
 
 function detail_data(id_testimonial) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "testimonial/detail/" + id_testimonial,
         dataType: "json",
         success: function (res) {
+            console.table(res);
             if (res.sts) {
                 let data = res.data;
-                $("#photo").val("");
-                $(".image").attr("src", data.image);
-
-                $("#inputName").val(data.name);
-                $("#inputPosition").val(data.position);
-                $("#inputText").val(data.text);
+                $("#modal-photo").val("");
+                $("#modal-photo_old").val(data.image);
+                $(".modal-show-image").attr("src", data.image);
+                $("#modal-inputName").val(data.name);
+                $("#modal-inputPosition").val(data.position);
+                $("#modal-inputText").val(data.text);
             }
-            $("#modal-form").show();
-        },
-        complete: function () {
-            $("#modal-form").modal("hide");
+            $("#modal-form").modal("show");
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            error_message("Some problem occurred, please try again.");
+            error_message(`Error : ${errorThrown}`);
         },
     });
 }
@@ -155,7 +196,10 @@ function error_message(msg) {
         title: "Error!",
         text: msg,
         icon: "error",
-        confirmButtonText: "OK",
+        showCancelButton: true,
+        cancelButtonText: "Close",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Refresh",
     });
 }
 
