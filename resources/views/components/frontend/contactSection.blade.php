@@ -25,8 +25,7 @@
                                     <i class="mdi mdi-home-outline fs-24 text-primary"></i>
                                 </div>
                                 <div class="icon-content ms-3">
-                                    <p class="mb-0 fs-15">744 New York Ave, Brooklyn, Kings,<br>
-                                        New York 10224</p>
+                                    <p class="mb-0 fs-15">{{$contact['address']}}</p>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +37,7 @@
                                     <i class="mdi mdi-phone-outline fs-24 text-primary"></i>
                                 </div>
                                 <div class="icon-content ms-3">
-                                    <p class="mb-0 fs-15">(+642) 245 356 432</p>
-                                    <p class="mb-0 fs-15">(+420) 336 476 328</p>
+                                    <p class="mb-0 fs-15">{{$contact['phone']}}</p>
                                 </div>
                             </div>
                         </div>
@@ -52,8 +50,7 @@
                                     <i class="mdi mdi-email-outline fs-24 text-primary"></i>
                                 </div>
                                 <div class="icon-content ms-3">
-                                    <p class="mb-0 fs-15">hellosuppot@gmail.com</p>
-                                    <p class="mb-0 fs-15">help@.com</p>
+                                    <p class="mb-0 fs-15">{{$contact['email']}}</p>
                                 </div>
                             </div>
                         </div>
